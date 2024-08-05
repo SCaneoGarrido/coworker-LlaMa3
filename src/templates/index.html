@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Chat </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/chat_css.css') }}">
+    </head>
+    <body>
+        <div id="appSection-chat">
+            <h2> Test Coworker </h2>
+            <div id="chatBox" class="chat-box">
+              <!-- Aquí aparecen los mensajes de Llama3 -->
+            </div>
+            <div class="input-group">
+              <div class="file-upload">
+                <input type="file" id="InputFile"> <!-- Asegúrate de que el ID coincida -->
+                <label for="InputFile">📁</label>
+                <span id="fileName" class="file-name">Ningún archivo seleccionado</span> <!-- Mensaje del archivo cargado -->
+              </div>
+              <textarea style="border: none;" id="userInput" class="form-control" rows="3" placeholder="Escribe tu mensaje aquí..."></textarea>
+              <button id="sendMessageBtn" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+        
+        <!-- Indicador de carga -->
+        <div id="loadingIndicator" style="display: none;" class="loading-indicator">
+            <div class="spinner"></div>
+            <p>Enviando mensaje...</p>
+        </div>     
+    </body>
+    <script src="{{ url_for('static', filename='js/chat_controller.js') }}"></script>
+</html>
